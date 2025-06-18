@@ -11,8 +11,8 @@ def test_memory_usage():
     mem, ret = memory_usage((some_func, (1, 2), dict(a=1)), retval=True)
     assert ret[0] == (1, 2)
     assert ret[1] == dict(a=1)
-    
-    
+
+
 def write_line(filepath):
     with open(filepath, 'a') as the_file:
         the_file.write('Testing\n')

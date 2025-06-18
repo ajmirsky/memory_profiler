@@ -1,9 +1,9 @@
-from .__main__ import (profile, memory_usage, __version__, LineProfiler, show_results)
+from .__main__ import LineProfiler, __version__, memory_usage, profile, show_results
 
 __all__ = [
-    'profile',
-    'memory_usage',
-    '__version__',
-    'LineProfiler',
-    'show_results'
+    "LineProfiler",
+    "__version__",
+    "memory_usage",
+    "profile",
+    "show_results"
 ]

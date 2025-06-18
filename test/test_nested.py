@@ -1,8 +1,7 @@
 # .. an example with a for loop ..
 
-import time
 
-from memory_profiler import profile, LineProfiler
+from memory_profiler import LineProfiler
 
 
 def func_1():
