@@ -1,6 +1,60 @@
+[project]
+name = "memory_profiler"
+description = "A module for monitoring memory usage of a python program"
+readme = "README.rst"
+dynamic = ["version"]
+license = { text = "BSD" }
+license-files = { paths = ["COPYING"] }
+authors = [{ name = "Fabian Pedregosa", email = "f@bianp.net" }]
+urls = { Homepage = "https://github.com/pythonprofilers/memory_profiler" }
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: BSD License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Topic :: Software Development",
+    "Operating System :: POSIX",
+    "Operating System :: Unix"
+]
+requires-python = ">=3.9"
+dependencies = [
+    "psutil>=0.0"
+]
+
+[dependency-groups]
+dev = [
+    "hatch>=1.14.1"
+    ]
+
+[project.scripts]
+mprof = "memory_profiler.mprof:main"
+
+
 [build-system]
-requires = ["setuptools"]
-build-backend = "setuptools.build_meta"
+requires = ["hatchling", "hatch-vcs", "uv-dynamic-versioning"]
+
+build-backend = "hatchling.build"
+
+[tool.hatch.build]
+packages = [
+    "src/memory_profiler"
+]
+exclude = [
+    ".venv*",
+    "tests/",
+    "**/tests/",
+    "**/*.pyc",
+    "**/__pycache__/",
+    "**/README.md",
+]
+
+[tool.hatch.build.targets.sdist]
+include = ["/src/memory_profile", "README.rst"]
+
+[tool.hatch.version]
+source = "vcs"
 
 [tool.codespell]
 skip = './.git'
