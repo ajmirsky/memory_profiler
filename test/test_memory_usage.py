@@ -38,9 +38,3 @@ def test_return_value_consistency():
     assert type(func_mem_list) == list, "Memory usage of callable should be a list"
     func_mem_max = memory_usage((some_func, (42,), dict(a=42)), max_usage=True)
     assert type(func_mem_max) == float, "Max memory usage of callable should be a number"
-
-
-if __name__ == "__main__":
-    test_memory_usage()
-    test_max_iterations()
-    test_return_value_consistency()

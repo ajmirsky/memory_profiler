@@ -20,13 +20,15 @@ classifiers = [
 ]
 requires-python = ">=3.9"
 dependencies = [
-    "psutil>=0.0"
+    "psutil>=0.0",
 ]
 
 [dependency-groups]
 dev = [
-    "hatch>=1.14.1"
-    ]
+    "hatch>=1.14.1",
+    "pytest>=8.4.1",
+    "pytest-asyncio>=1.0.0",
+]
 
 [project.scripts]
 mprof = "memory_profiler.mprof:main"
@@ -58,3 +60,6 @@ source = "vcs"
 
 [tool.codespell]
 skip = './.git'
+
+[tool.pytest.ini_options]
+testpaths = ["test"]
